@@ -1,7 +1,9 @@
+
+
 export default function Home() {
   return (
     <main>
-      <header></header>
+      <header>Taskify - Do What You Have ToDo!</header>
     </main>
   );
 }
