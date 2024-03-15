@@ -50,3 +50,25 @@ th, tr, td {
 th {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 99vw;
+    height: 99vh;
+}
+
+.modal-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 2%;
+    border-radius: 5px;
+    width: max-content;
+    height: max-content;
+    background-color: whitesmoke;
+}
