@@ -22,8 +22,10 @@ export default function Home() {
         <p>Home</p>
       </section>
       <section className="main-content">
-        <Table />
-        <button type="submit" onClick={() => setModalOpen(true)}>+ Add Project</button>
+        <div>
+          <Table />
+          <button className="btn" type="submit" onClick={() => setModalOpen(true)}>+ Add Project</button>
+        </div>
         { modalOpen && <Modal /> }
       </section>
       </div>
