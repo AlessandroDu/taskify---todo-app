@@ -2,3 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    padding-left: 1vw;
+}
+
+.sub-container {
+    display: flex;
+    flex: 1;
+    gap: 1vw;
+}
+
+.side-bar-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    flex: 0.2;
+    background-color: whitesmoke;
+    border-top-right-radius: 5px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: white;
+    border-top-left-radius: 5px;
+}
+
+th, tr, td {
+    border: solid lightgrey 0.9px;
+    font-size: x-small;
+    font-weight: 300;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 5px;
+}
+
+th {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

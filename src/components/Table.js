@@ -1,34 +1,41 @@
+"use client";
 
 export function Table() {
+
     return (
-        <div>
-            <header >Taskify - Do What You Have ToDo!</header>
-            <table className="table-auto border-collapse border border-slate-400">
-              <thead>
-                <tr>
-                  <th className="border border-slate-300">Song</th>
-                  <th className="border border-slate-300">Artist</th>
-                  <th className="border border-slate-300">Year</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                  <td>Malcolm Lockyer</td>
-                  <td>1961</td>
-                </tr>
-                <tr>
-                  <td>Witchy Woman</td>
-                  <td>The Eagles</td>
-                  <td>1972</td>
-                </tr>
-                <tr>
-                  <td>Shining Star</td>
-                  <td>Earth, Wind, and Fire</td>
-                  <td>1975</td>
-                </tr>
-              </tbody>
-            </table>
-        </div>
+    <table className="table">
+        <thead>
+            <tr>
+                <th>Project</th>
+                <th>Status</th>
+                <th>Due date</th>
+                <th>Priority</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>project description</td>
+                <td>project status</td>
+                <td>project due date</td>
+                <td>project priority</td>
+                <td>project notes</td>
+            </tr>
+            <tr>
+                <td>project description</td>
+                <td>project status</td>
+                <td>project due date</td>
+                <td>project priority</td>
+                <td>project notes</td>
+            </tr>
+            <tr>
+                <td>project description</td>
+                <td>project status</td>
+                <td>project due date</td>
+                <td>project priority</td>
+                <td>project notes</td>
+            </tr>
+        </tbody>
+    </table>
     );
-}
+};
