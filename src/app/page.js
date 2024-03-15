@@ -1,9 +1,9 @@
-
+import { Table } from "@/components/Table"
 
 export default function Home() {
   return (
-    <main>
-      <header>Taskify - Do What You Have ToDo!</header>
+    <main className="grid place-content-center">
+      <Table />
     </main>
   );
 }
