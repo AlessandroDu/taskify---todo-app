@@ -1,11 +1,21 @@
 "use client";
 
-export function Table({ projects }) {
+import { select } from "d3";
+import { useState } from "react";
+
+export function Table({ projects, setToolbarOpen, setIndex }) {
+
+    function toolbarToggle(e) {
+        if (e.checked) {
+            setToolbarOpen(true)
+        } else setToolbarOpen(false)
+    }
 
     return (
     <table className="table">
         <thead>
             <tr>
+                <th></th>
                 <th>Project</th>
                 <th>Status</th>
                 <th>Due date</th>
@@ -14,17 +24,17 @@ export function Table({ projects }) {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>project 1</td>
-                <td>Working on it</td>
-                <td>20/01/2004</td>
-                <td>medium</td>
-                <td>some notes here</td>
-            </tr>
             {
                 projects.map((project, idx) => {
                     return (
                         <tr key={idx}>
+                            <td>
+                                <input name="select" type="checkbox" 
+                                    onClick={(e) => {
+                                        setIndex(idx);
+                                        toolbarToggle(e.currentTarget);
+;                                   }} />
+                            </td>
                             <td>{ project.projectName }</td>
                             <td>{ project.status }</td>
                             <td>{ project.dueDate }</td>

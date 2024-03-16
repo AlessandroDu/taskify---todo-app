@@ -39,6 +39,10 @@ header {
     border-top-left-radius: 5px;
 }
 
+table {
+    min-width: 40vw;
+}
+
 th, tr, td {
     border: solid lightgrey 0.9px;
     font-size: x-small;
@@ -101,4 +105,13 @@ th {
 
 .btn-modal {
     width: max-content;
+}
+
+.toolbar-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 5vh;
+    z-index: 1;
+    background-color: azure;
 }

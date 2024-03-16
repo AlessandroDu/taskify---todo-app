@@ -58,7 +58,7 @@ export function Modal({ projects, setProjects }) {
                     <input value={ notes } type="text" placeholder="Notes" onChange={(e) => setNotes(e.target.value)} />
                 </div>
                 <div className="modal-btn-div">
-                    <button className="btn btn-modal" type="button" onClick={() => addProject() }>+ Add</button>
+                    <button className="btn btn-modal" type="button" onClick={() => addProject()}>+ Add</button>
                 </div>
             </form>
         </div>
