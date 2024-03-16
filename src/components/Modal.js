@@ -1,6 +1,18 @@
 "use client"
 
-export function Modal() {
+export function Modal({ projects, setProjects }) {
+
+    function addProject() {
+        let newProject = {
+          projectName: "test project",
+              status: "not started",
+              dueDate: "12/04/2024",
+              priority: "medium",
+              notes: "action items",
+        }
+        setProjects([...projects, newProject]);
+    }
+
     return (
         <div className="modal-container">
             <form>
@@ -9,7 +21,7 @@ export function Modal() {
                     <input type="text" placeholder="Project" />
                 </div>
                 <div className="modal-input-field-container">
-                    <label for="status" >Status</label>
+                    <label htmlFor="status" >Status</label>
                     <select name="status">
                         <option value="done">Done</option>
                         <option value="working on it">Working on it</option>
@@ -34,7 +46,7 @@ export function Modal() {
                     <input type="text" placeholder="Notes" />
                 </div>
                 <div className="modal-btn-div">
-                    <button className="btn btn-modal" type="button">+ Add</button>
+                    <button className="btn btn-modal" type="button" onClick={() => addProject() }>+ Add</button>
                 </div>
             </form>
         </div>

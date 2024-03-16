@@ -1,6 +1,6 @@
 "use client";
 
-export function Table() {
+export function Table({ projects }) {
 
     return (
     <table className="table">
@@ -35,6 +35,19 @@ export function Table() {
                 <td>project priority</td>
                 <td>project notes</td>
             </tr>
+            {
+                projects.map((project, idx) => {
+                    return (
+                        <tr key={idx}>
+                            <td>{ project.projectName }</td>
+                            <td>{ project.status }</td>
+                            <td>{ project.dueDate }</td>
+                            <td>{ project.priority }</td>
+                            <td>{ project.notes }</td>
+                        </tr>
+                    )
+                })
+            }
         </tbody>
     </table>
     );

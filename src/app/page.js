@@ -7,6 +7,7 @@ import { useState } from "react";
 export default function Home() {
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [projects, setProjects] = useState([]);
 
   return (
     <div className="main-container"
@@ -23,10 +24,10 @@ export default function Home() {
       </section>
       <section className="main-content">
         <div>
-          <Table />
+          <Table projects={ projects }/>
           <button className="btn" type="submit" onClick={() => setModalOpen(true)}>+ Add Project</button>
         </div>
-        { modalOpen && <Modal /> }
+        { modalOpen && <Modal projects={ projects } setProjects={ setProjects }/> }
       </section>
       </div>
     </div>
