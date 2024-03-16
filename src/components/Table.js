@@ -15,25 +15,11 @@ export function Table({ projects }) {
         </thead>
         <tbody>
             <tr>
-                <td>project description</td>
-                <td>project status</td>
-                <td>project due date</td>
-                <td>project priority</td>
-                <td>project notes</td>
-            </tr>
-            <tr>
-                <td>project description</td>
-                <td>project status</td>
-                <td>project due date</td>
-                <td>project priority</td>
-                <td>project notes</td>
-            </tr>
-            <tr>
-                <td>project description</td>
-                <td>project status</td>
-                <td>project due date</td>
-                <td>project priority</td>
-                <td>project notes</td>
+                <td>project 1</td>
+                <td>Working on it</td>
+                <td>20/01/2004</td>
+                <td>medium</td>
+                <td>some notes here</td>
             </tr>
             {
                 projects.map((project, idx) => {
