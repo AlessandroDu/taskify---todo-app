@@ -3,7 +3,7 @@
 export function Toolbar({ deleteRow }) {
 
     return <div className="toolbar-container">
-            <p>hello I'm a toolbar</p>
-            <button type="button" onClick={() => deleteRow()} >Delete</button>
+            <h2>Toolbar</h2>
+            <button className="btn toolbar-btn-delete" type="button" onClick={() => deleteRow()} >Delete project</button>
         </div>
 }

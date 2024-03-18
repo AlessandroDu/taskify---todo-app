@@ -1,16 +1,36 @@
 "use client";
 
-import { select } from "d3";
 import { useState } from "react";
 
-export function Table({ projects, setToolbarOpen, setIndex }) {
+export function Table({ projects, toolbarToggle }) {
+    const [editingName, setEditingName] = useState(false);
+    const [editingStatus, setEditingStatus] = useState(false);
 
-    function toolbarToggle(e) {
-        if (e.checked) {
-            setToolbarOpen(true)
-        } else setToolbarOpen(false)
+    const [newProjectName, setNewProjectName] = useState("");
+    const [newStatus, setNewStatus] = useState("Not started");
+    const [newDueDate, setNewDueDate] = useState("");
+    const [newPriority, setNewPriority] = useState("Low");
+    const [newNotes, setNewNotes] = useState("");
+
+    function editOnDC1(idx) {
+        if (!editingName) {
+            setEditingName(true);
+        } else {
+            setEditingName(false);
+            projects[idx].projectName = newProjectName;
+        }
     }
 
+    function editOnDC2(idx) {
+        if (!editingStatus) {
+            setEditingStatus(true);
+        } else {
+            setEditingStatus(false);
+            projects[idx].status = newStatus;
+        }
+    }
+
+    
     return (
     <table className="table">
         <thead>
@@ -26,18 +46,32 @@ export function Table({ projects, setToolbarOpen, setIndex }) {
         <tbody>
             {
                 projects.map((project, idx) => {
+
                     return (
                         <tr key={idx}>
                             <td>
-                                <input name="select" type="checkbox" 
+                                <input name="select" type="checkbox"
                                     onClick={(e) => {
-                                        setIndex(idx);
-                                        toolbarToggle(e.currentTarget);
+                                        toolbarToggle(e.currentTarget, idx);
 ;                                   }} />
                             </td>
-                            <td>{ project.projectName }</td>
-                            <td>{ project.status }</td>
-                            <td>{ project.dueDate }</td>
+
+                            <td onDoubleClick={() => { editOnDC1(idx) }}>
+                                {editingName ? 
+                                <input type="text" defaultValue={projects[idx].projectName} placeholder="Project" onChange={(e) => setNewProjectName(e.target.value)} /> 
+                                : projects[idx].projectName}
+                            </td>
+                            <td onDoubleClick={() => { editOnDC2(idx) }}>
+                                { editingStatus ?
+                                <select name="status" onChange={(e) => setNewStatus(e.target.value)}>
+                                    <option value="not started">Not started</option>
+                                    <option value="done">Done</option>
+                                    <option value="working on it">Working on it</option>
+                                    <option value="stuck">Stuck</option>
+                                </select>
+                                : projects[idx].status }
+                            </td>
+                            <td>{ project.dueDate ? project.dueDate : <input type="date" /> }</td>
                             <td>{ project.priority }</td>
                             <td>{ project.notes }</td>
                         </tr>

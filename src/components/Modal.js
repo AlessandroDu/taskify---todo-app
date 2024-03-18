@@ -10,6 +10,11 @@ export function Modal({ projects, setProjects }) {
     const [notes, setNotes] = useState("");
 
     function addProject() {
+
+        if (! (projectName && notes)) {
+            alert("You forgot something...");
+            return;
+        }
         let newProject = {
           projectName: projectName,
               status: status,
