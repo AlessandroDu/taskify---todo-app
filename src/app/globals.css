@@ -59,6 +59,7 @@ th, tr, td {
 
 th {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: whitesmoke;
 }
 
 .modal-container {
